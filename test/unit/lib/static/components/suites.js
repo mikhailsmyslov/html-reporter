@@ -4,7 +4,6 @@ import {defaults, defaultsDeep} from 'lodash';
 
 import {mkConnectedComponent} from './utils';
 import {config} from 'lib/constants/defaults';
-import clientEvents from 'lib/constants/client-events';
 import viewModes from 'lib/constants/view-modes';
 
 describe('<Suites/>', () => {
@@ -51,33 +50,6 @@ describe('<Suites/>', () => {
         mkSuitesComponent();
 
         assert.notCalled(SectionCommon);
-    });
-
-    it('should render section common without "eventToUpdate" and "eventToReset" if "lazyLoadOffset" disabled', () => {
-        getVisibleRootSuiteIds.returns(['suite-id']);
-
-        mkSuitesComponent({errorGroupBrowserIds: []}, {view: {lazyLoadOffset: 0}});
-
-        assert.calledOnceWith(
-            SectionCommon,
-            {suiteId: 'suite-id', sectionRoot: true, errorGroupBrowserIds: []}
-        );
-    });
-
-    it('should render section common without "eventToUpdate" and "eventToReset" if "lazyLoadOffset" enabled', () => {
-        getVisibleRootSuiteIds.returns(['suite-id']);
-
-        mkSuitesComponent({errorGroupBrowserIds: []}, {view: {lazyLoadOffset: 100500}});
-
-        assert.calledOnceWith(
-            SectionCommon,
-            {
-                suiteId: 'suite-id',
-                sectionRoot: true, errorGroupBrowserIds: [],
-                eventToUpdate: clientEvents.VIEW_CHANGED,
-                eventToReset: clientEvents.SUITES_VISIBILITY_CHANGED
-            }
-        );
     });
 
     it('should render few section commons components', () => {

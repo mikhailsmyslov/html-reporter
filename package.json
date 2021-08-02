@@ -79,7 +79,6 @@
     "web-vitals": "^1.1.2"
   },
   "devDependencies": {
-    "@gemini-testing/react-lazily-render": "^1.2.1",
     "@gemini-testing/react-lazyload": "^2.3.2",
     "app-module-path": "^2.2.0",
     "babel-core": "^6.26.0",
@@ -134,6 +133,7 @@
     "react-clipboard.js": "^1.1.2",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
+    "react-virtualized": "^9.22.3",
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
     "redux-mock-store": "^1.5.1",
