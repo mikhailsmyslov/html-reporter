@@ -61,7 +61,7 @@ directory.
 
   In 'Group by error' mode test will be associated with group if test error matches on group error pattern. New group will be created if test cannot be associated with existing groups.
 
-* **metaInfoBaseUrls** (optional) `Object` - base paths for making link from Meta-info values. Object option must be Meta-info's key and value must be `String`. For example, {'file': 'base/path'}.
+* **metaInfoBaseUrls** (optional) `Object` - base paths for making link from Meta-info values. Object option must be Meta-info's key and value must be `String` or `Object` with fields **url** and **query**. Value in **query** must be `Object`. For example, {'file': 'base/path'}, {'file': {'url': 'base/path', 'query':{'a':'b', 'c':'d'}}}.
 * **saveFormat** (**DEPRECATED**, optional) `String` - allows to specify the format, in which the results will be saved. Available values are:
   * `sqlite` - save tests results to Sqlite database. Default value.
 * **customGui** (optional) `Object` – allows to specify custom controls for gui-mode and define actions for them. `{}` is default value. Ordinarily custom controls should be split by sections depending on the purposes of the controls. At least one section should be specified.

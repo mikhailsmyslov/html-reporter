@@ -110,6 +110,32 @@ describe('<MetaInfo />', () => {
             type: 'url',
             metaInfoBaseUrls: {file: 'http://127.0.0.1'},
             expectedFileUrl: 'http://127.0.0.1/test/file'
+        },
+        {
+            type: 'url with one query param',
+            metaInfoBaseUrls: {
+                file: {
+                    url: 'http://127.0.0.1',
+                    query: {
+                        a: 'b'
+                    }
+                }
+            },
+            expectedFileUrl: 'http://127.0.0.1/test/file?a=b'
+        },
+        {
+            type: 'url with few query params',
+            metaInfoBaseUrls: {
+                file: {
+                    url: 'http://127.0.0.1',
+                    query: {
+                        a: 'b',
+                        b: 'c',
+                        c: 'd'
+                    }
+                }
+            },
+            expectedFileUrl: 'http://127.0.0.1/test/file?a=b&b=c&c=d'
         }
     ].forEach((stub) => {
         it(`should render link in meta info based upon metaInfoBaseUrls ${stub.type}`, () => {
