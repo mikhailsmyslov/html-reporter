@@ -312,7 +312,7 @@ describe('config', () => {
         });
 
         it('should validate if passed to object value is number', () => {
-            assert.throws(() => parseConfig({metaInfoBaseUrls: {file: 10}}), /option must be string or object, but got number/);
+            assert.throws(() => parseConfig({metaInfoBaseUrls: {file: 10}}), /option must be string, but got number/);
         });
     });
 

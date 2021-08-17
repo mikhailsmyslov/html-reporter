@@ -114,26 +114,14 @@ describe('<MetaInfo />', () => {
         {
             type: 'url with one query param',
             metaInfoBaseUrls: {
-                file: {
-                    url: 'http://127.0.0.1',
-                    query: {
-                        a: 'b'
-                    }
-                }
+                file: 'http://127.0.0.1?a=b'
             },
             expectedFileUrl: 'http://127.0.0.1/test/file?a=b'
         },
         {
             type: 'url with few query params',
             metaInfoBaseUrls: {
-                file: {
-                    url: 'http://127.0.0.1',
-                    query: {
-                        a: 'b',
-                        b: 'c',
-                        c: 'd'
-                    }
-                }
+                file: 'http://127.0.0.1?a=b&b=c&c=d'
             },
             expectedFileUrl: 'http://127.0.0.1/test/file?a=b&b=c&c=d'
         }
